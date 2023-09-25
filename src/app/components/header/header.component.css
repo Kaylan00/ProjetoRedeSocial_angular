@@ -1,0 +1,31 @@
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  1rem;
+    border-bottom: 2px solid #330f02 ;
+    color: #330f02;
+    
+}
+nav img{
+    width: 3rem;
+}
+.brand, .links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.brand:hover >h2{
+    color: #a53b28;
+}
+.links li{
+    margin-right: 1em;
+    list-style: none;
+}
+.links a:hover{
+    border-radius: 5px;
+    background-color: #efefef;
+    padding: .2rem .3rem;
+}

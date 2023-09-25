@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+    color: #330f02;
+}
+a{
+    text-decoration: none;
+    transition: .4;
+}
+a:hover{
+    color: #8b0000;
+}
+
+/* formularios */
+form {
+    width: 450px;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 5px;
+}
+
+.div-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.div-form label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.div-form input,
+.div-form textarea {
+    padding-bottom: 2rem;
+    color: #330f02;
+    font-size: 0.8rem;
+}
+.input-bordas{
+    border: #8b0000 solid 2px;
+    border-radius: 5px;
+    padding: .5rem;
+}
+
+input[type="file"] {
+    color: #8b0000;
+}
+
+input[type="submit"] {
+    background-color: #8b0000;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    color: aliceblue;
+    font-weight: bold;
+    transition: 0.1s;
+}
+
+input[type="submit"]:hover {
+    background-color: #f5e8e5;
+    color: #8b0000;
+    border: 2px solid #8b0000;
+}
+.erro-validação p{
+    color: red;
+}
+
+
+
+
