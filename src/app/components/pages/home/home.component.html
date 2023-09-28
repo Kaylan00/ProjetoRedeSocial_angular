@@ -1,1 +1,30 @@
-<h1>home works!</h1>
+<div class="home-container">
+    <h1>Olhe oque estao compartilhando: </h1>
+    <div class="search-container">
+        <form >
+            <img src="/assets/search-regular-24.png" alt="">
+            <input type="text" 
+            placeholder="Busque por um post"
+            (input)="search($event)">
+        </form>
+    </div>
+    <div *ngIf="moments.length > 0; else noMoments">
+        <div class="moments-container">
+            <div class="moment" *ngFor="let moment of moments">
+                <img [src]="baseApiUrl + '/uploads/' + moment.image" 
+                alt="{{moment.title}}" 
+                />
+                <h2>{{moment.title}}</h2>
+                <!--<h6>{{moment.description}}</h6> -->
+                <p class="date">Em: {{moment.created_at}}</p>
+                <p>Comentários: {{moment.comments!.length}}</p>
+                <p><a routerLink="moments/{{moment.id}}">Detalhes</a></p>
+            </div>
+        </div>
+    </div>
+    <ng-template #noMoments>
+        <h1>Poxa não há nenhum post cadastrado :(</h1>
+        <h3>Que tal ser o primeiro a postar?</h3>
+        <a routerLink="/moments/new" class="link-no-moment">Compartilhar</a>
+    </ng-template>
+</div>

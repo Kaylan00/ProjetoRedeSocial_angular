@@ -1,0 +1,37 @@
+.mensagem{
+    position: fixed;
+    top: 3rem;
+    width: 50%;
+    margin-left: 50%;
+    left: -25%;
+    z-index: 10;
+    padding: 1.5rem;
+    background-color: wheat;
+    border: solid 3px brown;
+}
+.mensagem-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.mensagem-header h2{
+    margin-bottom: 0.9rem;
+}
+.mensagem p{
+    font-size: 1.3rem;
+}
+.clear {
+    cursor: pointer;
+    background-color: brown;
+    border: solid 3px black;
+    padding: .6rem .8rem;
+    color: wheat;
+    font-size: 1.7rem;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s; /* Efeito de transição suave */
+}
+
+.clear:hover {
+    background-color: darkred; /* Cor de fundo no hover */
+    color: white; /* Cor do texto no hover */
+}

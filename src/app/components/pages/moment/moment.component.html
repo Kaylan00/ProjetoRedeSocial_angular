@@ -1,0 +1,50 @@
+<div class="moment" *ngIf="moment">
+    <h1>{{moment.title}}</h1>
+    <img [src]="baseApiUrl + '/uploads/' + moment.image" alt="{{moment.title}}" />
+    <div class="about-moment">
+        <h3>Sobre o post:</h3>
+        <p>{{moment.description}}</p>
+    </div>
+    <div class="actions">
+        <a [routerLink]="'/edit/' + moment.id" class="edit-btn"><img src="/assets/icone-lapis.png" alt="">Editar</a>
+        <button class="remove-btn" (click)="removeHandler(moment.id!)">
+            <img src="/assets/icone-lixo.png" alt="">
+            Excluir
+        </button>
+    </div>
+    <div class="comentarios">
+        <h3>Comentarios({{
+            moment.comments!.length > 0 ? moment.comments!.length:0
+            }})
+        </h3>
+    </div>
+    <div *ngIf="moment.comments!.length > 0 else noComments">
+        <div class="comments-container" *ngFor="let comment of moment.comments">
+            <p class="comment">{{comment.text}}</p>
+            <p class="author"><span>por</span>{{comment.username}}</p>
+        </div>
+    </div>
+    <ng-template #noComments>
+        <p>Não há comentarios</p>
+    </ng-template>
+    <div class="comment-form">
+        <h3>Deixe comentarios</h3>
+        <form [formGroup]="commentForm" #formDir="ngForm" (ngSubmit)="onSubmit(formDir)">
+            <div class="div-form">
+                <label for="text">Comentário:</label>
+                <textarea placeholder="O que voce quer comentar?" formControlName="text"></textarea>
+                <div *ngIf="text.invalid && formDir.submitted" class="erro-validação">
+                    <p *ngIf="text.errors?.['required']">O titulo é obrigatório</p>
+                </div>
+            </div>
+            <div class="div-form">
+                <label for="username">Nome:</label>
+                <input placeholder="Digite seu nome" type="text" formControlName="username">
+                <div *ngIf="username.invalid && formDir.submitted" class="erro-validação">
+                    <p *ngIf="username.errors?.['required']">Nome é obrigatório</p>
+                </div>
+            </div>
+            <input type="submit" value="Comentar!">
+        </form>    
+    </div>
+</div>

@@ -40,7 +40,7 @@ form {
 
 .div-form input,
 .div-form textarea {
-    padding-bottom: 2rem;
+    padding: .9rem;
     color: #330f02;
     font-size: 0.8rem;
 }
@@ -72,7 +72,16 @@ input[type="submit"]:hover {
 .erro-validação p{
     color: red;
 }
-
+/*botoes*/
+.edit-btn,
+.remove-btn{
+    border: 1px solid #efefef;
+    padding: .4rem 1rem;
+    font-size: 1rem;
+    margin: 0 .5rem;
+    cursor: pointer;
+    background-color: #f5e8e5;
+}
 
 
 
